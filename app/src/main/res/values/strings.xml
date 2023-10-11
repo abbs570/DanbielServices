@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DanbielServices</string>
+<!--Clock in clock out button on main page-->
+    <string name="toggle_default_text">ToggleButton</string>
+    <string name="clock_in">Clock In</string>
+    <string name="clock_out">Clock Out</string>
+
 </resources>

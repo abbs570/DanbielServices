@@ -1,6 +1,8 @@
 package com.example.danbielservices
 
 import android.os.Bundle
+import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,29 +17,17 @@ import com.example.danbielservices.ui.theme.DanbielServicesTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            DanbielServicesTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
+        setContentView(R.layout.activity_main)
+            //        Toggle Button
+            val tg = findViewById<ToggleButton>(R.id.clockInOut)
+            tg.setOnCheckedChangeListener{ _, isChecked ->
+                Toast.makeText(this, if(isChecked)"You are clocked in" else "You are clocked out", Toast.LENGTH_SHORT).show()
             }
+
+
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-            text = "Hello $name!",
-            modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DanbielServicesTheme {
-        Greeting("Android")
     }
-}
+
+
+
